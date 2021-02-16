@@ -4,6 +4,26 @@ class Patron {
         this.email = email;
         this.currentBook = null;
     }
+  
+    checkOut(book){
+        this.currentBook = book;
+        book.out = true;
+        book.patron = this;
+    }
+    
+    returnBook(book) {
+        this.currentBook = null;
+        book.out = false;
+        book.patron = null;
+    }
+}
+
+/*class Patron {
+    constructor(name, email){
+        this.name = name;
+        this.email = email;
+        this.currentBook = null;
+    }
  checkOut(book){
         this.currentBook = book;
         book.out = true;
@@ -20,4 +40,4 @@ returnBook(book) {
         book.dueDate = null;
 }
 
-}
+}*/
